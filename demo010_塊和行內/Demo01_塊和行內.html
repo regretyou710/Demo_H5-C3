@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>塊和行內</title>
+</head>
+
+<body>
+    <!-- 
+        塊元素(block element)
+            - 在網頁中一般通過塊元素來對頁面進行布局
+        行內元素(inline element)
+            - 行內元素主要用來包裹文字
+
+            - 一般情況下會在塊元素中放行內元素，而不會在行內元素中放塊元素
+            - 塊元素中基本上什麼都能放
+            - p元素中不能放任何的塊元素
+
+        瀏覽器在解析網頁時，會自動對網頁中不符合規範的內容進行修正
+            比如:
+                標籤寫在了根元素的外部
+                p元素中嵌套了塊元素
+                根元素中出現了除head和body以外的子元素
+                ... ...
+     -->
+
+    <p>
+        <h1>哈哈</h1>
+    </p>
+</body>
+
+</html>
+<h1>我就要寫在html標籤的外部！</h1>
