@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相對路徑</title>
+</head>
+
+<body>
+    <!-- 
+        當我們需要跳轉一個服務器內部的頁面時，一般我們都會使用相對路徑
+            相對路徑都會使用.或..開頭
+                ./
+                ../
+            ./可以省略不寫，如果不寫./也不寫../則就相當于寫了./
+
+            ./ 表示當前文件所在的目錄
+                - 在這裡當前頁面就是 Demo01_相對路徑.html
+                - ./就等於 Demo01_相對路徑.html 所在的目錄 path
+
+            ../ 表示當前文件所在目錄的上一級目錄
+
+     -->
+    <a href="./target.html">超連結1</a>
+    <br><br>
+    <a href="../../demo012_列表/Demo01_列表.html">超連結2</a>
+    <br><br>
+    <a href="./inner/target2.html">超連結3</a>
+    <br><br>
+    <a href="../outer/target3.html">超連結4</a>
+</body>
+
+</html>
