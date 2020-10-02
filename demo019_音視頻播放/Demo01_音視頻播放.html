@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音視頻播放</title>
+</head>
+
+<body>
+    <!-- 
+        audio 標籤用來向頁面中引入一個外部的音頻文件(聲音、影片)的
+              音視頻文件引入時，默認情況下不允許用戶自己控制播放停止
+
+        屬性:
+            controls 是否允許用戶控制播放
+            autoplay 音頻文件是否自動播放
+                     - 如果設置了autoplay 則音樂在打開頁面時會自動播放
+                       但是目前來講大部分瀏覽器都不會自動對音樂進行播放 
+            loop 音樂是否循環播放  
+     -->
+    <!-- <audio src="./source/audio.mp3" controls autoplay loop></audio> -->
+
+    <!-- <audio src="./source/audio.mp3" controls></audio> -->
+
+
+    <!-- 除了通過src來指定外部文件的路徑以外，還可以通過source來指定文件的路徑 -->
+
+    <audio controls>
+        <!-- 
+            在瀏覽器不支持播放音頻標籤時可以使用下列方式告訴用戶端
+            <audio>
+                提示文字
+                <source>
+            </audio>
+            如果瀏覽器支持<audio><source>標籤，<audio>標籤內的撰寫的提示文字不會顯示
+            如果瀏覽器不支持<audio><source>標籤，則會將<audio><source>標籤去除留下撰寫的提示文字
+
+            如果瀏覽器不支持mp3格式也可以使用下列標籤方式讓瀏覽器依順位選擇可用格式來播放
+            <audio>
+                <source>
+                <source>
+                ...
+            </audio>
+
+            embed 標籤所有瀏覽器都支持但樣式不統一，所以可以將它放進選擇順位中最後，當瀏覽器不支持的格式
+            都找不到時在選擇都兼容的標籤
+         -->
+        <!-- 對不起，您的瀏覽器不支持播放音頻！請升級瀏覽器！ -->
+        <source src="./source/audio.mp3">
+        <source src="./source/audio.ogg">
+        <embed src="./source/audio.mp3" type="audio/mp3" width="300" height="100">
+    </audio>
+
+    <!-- 
+        使用video標籤來向網頁中引入一個視頻
+        - 使用方式和audio基本上是一樣的
+     -->
+    <video controls>
+        <source src="./source/flower.webm">
+        <source src="./source/flower.mp4">
+        <embed src="./source/flower.mp4" type="video/mp4">
+    </video>
+
+    <iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=b00318l66nt" allowFullScreen="true"
+        width="500" height="300"></iframe>
+</body>
+
+</html>
