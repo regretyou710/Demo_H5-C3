@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>屬性選擇器</title>
+    <style>
+        /* 
+            [屬性名] 選擇含有指定屬性的元素
+            [屬性名=屬性值] 選擇含有指定屬性和屬性值的元素
+            [屬性名^=屬性值] 選擇屬性值以指定值開頭的元素
+            [屬性名$=屬性值] 選擇屬性值以指定值結尾的元素
+            [屬性名*=屬性值] 選擇屬性值中含有某值的元素的元素
+         */
+        /* p[title]{ */
+        /* p[title=abc]{ */
+        /* p[title^=abc]{ */
+        /* p[title$=abc]{ */
+        p[title*=e] {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <p title="abc">少小離家老大回</p>
+    <p title="abcdef">鄉音無改鬢毛衰</p>
+    <p title="helloabc">兒童相見不相識</p>
+    <p>笑問客從何處來</p>
+    <p>秋水共長天一色</p>
+    <p>落霞與孤鶩齊飛</p>
+</body>
+
+</html>

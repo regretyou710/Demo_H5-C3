@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>偽類選擇器</title>
+    <style>
+        /* 
+            將ul里的第一個li設置為紅色
+         */
+
+        /* 
+         偽類(不存在的類，特殊的類)
+            - 偽類用來描述一個元素的特殊狀態
+                例如:第一個子元素、被點擊的元素、鼠標移入的元素...
+            - 偽類一般情況下都是使用:開頭
+                :first-child 第一個子元素
+                :last-child 最後一個子元素
+                :nth-child(n) 選中第n個子元素
+                    特殊值:
+                        n 第n個 n的範圍0到正無窮
+                        2n 或 even 表示選中偶數位的元素
+                        2n+1 或 odd 表示選中奇數位的元素
+
+                    - note:以上這些偽類都是根據"所有的子元素進行排序"
+
+                :first-of-type
+                :last-of-type
+                :nth-of-type()
+                    - note:這幾個偽類的功能和上述的類似，不同點是他們是在"同類型元素中進行排序"
+
+            - :not() 否定偽類
+                - 將符合條件的元素從選擇器中去除
+        */
+        /* ul>li:first-child {
+            color: red;
+        } */
+
+        /* ul>li:last-child {
+            color: red;
+        } */
+
+        /* ul>li:nth-child(2n+1) {
+            color: red;
+        } */
+
+        /* ul>li:nth-child(even) {
+            color: red;
+        } */
+
+        /* ul>li:first-of-type {
+            color: red;
+        } */
+
+        ul>li:not(:nth-of-type(3)) {
+            color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <span>我是一個span</span>
+        <li>第〇個</li>
+        <li>第一個</li>
+        <li>第二個</li>
+        <li>第三個</li>
+        <li>第四個</li>
+        <li>第五個</li>
+    </ul>
+    <!-- ul+ul enter => <ul></ul><ul></ul>
+    ul>ui enter => <ul><li></li></ul>
+    ul>ui*2 enter => <ul><li></li><li></li></ul> -->
+</body>
+
+</html>
