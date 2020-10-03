@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複合選擇器</title>
+    <style>
+        /* 將class為red的元素設置為紅色(字體) */
+        .red {
+            color: red;
+        }
+
+        /* 將class為red的div字體大小設置為30px */
+        /* 
+            交集選擇器
+                作用:選中同時復合多個條件的元素
+                語法:選擇器1選擇器2選擇器3選擇器n{}
+                note:交集選擇器中如果有元素選擇器，必須使用元素選擇器開頭
+            
+             ex: div.red {}
+             =>元素選擇器類選擇器{}
+        */
+        
+        div.red {
+            font-size: 30px;
+        }
+
+        .a.b.c {
+            color: blue
+        }
+
+        /* div#box1{} */
+
+        /*
+            選擇器分組(併集選擇器)
+                作用:同時選擇多個選擇器對應的元素
+                語法:選擇器1,選擇器2,選擇器3,選擇器n{}
+
+                #b1,.p1,h1,span,div.red{}
+         */
+        h1,
+        span {
+            color: green
+        }
+    </style>
+</head>
+
+<body>
+<div class="red">我是div</div>
+
+    <p class="red">我是p元素</p>
+
+    <div class="red2 a b c">我是div2</div>
+
+    <h1>標題</h1>
+
+    <span>哈哈</span>
+</body>
+
+</html>

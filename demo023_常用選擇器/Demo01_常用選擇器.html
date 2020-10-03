@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用選擇器</title>
+    <style>
+        /* 
+            將所有的段落設置為紅色(字體)
+
+            元素選擇器
+                作用:根據標籤名來選中指定的元素
+                語法:標籤名{}
+                例子:p{}  h1{}  div{}
+        */
+        /*
+        p{
+            color: red;
+        }
+
+        h1{
+            color: green;
+        } 
+        */
+
+
+        /* 
+            將兒童相見不相識設置紅色
+
+            id選擇器
+                作用:根據元素的id屬性值選中一個元素
+                語法:#id屬性值{}
+                例子:#box{} #red{}  
+        */
+        /* #red {
+            color: red;
+        } */
+
+
+        /*
+            將 秋水... 和 落霞... 設置為藍色
+                
+            類選擇器
+                作用:根據元素的class屬性值選中一組元素
+                語法:.class屬性值                
+        */
+        /* .blue {
+            color: blue;
+        }
+
+        .abc {
+            font-size: 20px;
+        } */
+
+
+        /* 
+            通配選擇器
+                作用:選中頁面中的所有元素
+                語法: *
+        */
+        * {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="blue abc">我是標題</h1>
+    <p>少小離家老大回</p>
+    <p>鄉音無改鬢毛衰</p>
+    <p id="red">兒童相見不相識</p>
+    <p>笑問客從何處來</p>
+    <!-- 
+        class 是一個標籤的屬性，它和id類似，不同的是class可以重復使用
+            可以通過class屬性來為元素分組
+            可以同時為一個元素指定多個class屬性，屬性值之間用空格隔開
+    -->
+    <p class="blue">秋水共長天一色</p>
+    <p class="blue">落霞與孤鶩齊飛</p>
+</body>
+
+</html>
