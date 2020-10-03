@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>偽元素</title>
+    <style>
+        p {
+            font-size: 20px;
+        }
+
+        /* 
+         偽元素，表示頁面中一些特殊的並不真實的存在的元素(特殊的位置)
+           偽元素使用 :: 開頭
+
+           ::first-letter 表示第一個字母
+           ::first-line 表示第一行
+           ::selection 表示選中的內容
+
+           ::before 元素的開始 
+           ::after 元素的最後
+           - before 和 after 必須結合content屬性來使用
+        */
+        p::first-letter {
+            font-size: 50px;
+        }
+
+        p::first-line {
+            background-color: yellow;
+        }
+
+        p::selection {
+            background-color: greenyellow;
+        }
+
+        /* div::before{
+            content: 'abc';
+            color: red;
+        }
+
+        div::after{
+            content: 'haha';
+            color: blue;
+        } */
+
+        div::before {
+            content: '『';
+        }
+
+        div::after {
+            content: '』';
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <q>hello</q> -->
+    <div>Hello Hello How are you</div>
+
+    <!-- lorem enter => 內建文本範例 -->
+    <!-- 
+     如果想輸出首字母放大效果:
+
+     <p>
+       <span>L</span>orem ipsum dolor sit amet consectetur adipisicing elit. Atque velit modi veniam nisi veritatis tempore laborum
+        nemo ipsa itaque optio. Id odit consequatur mollitia excepturi, minus saepe nostrum vel porro.
+     </p>
+
+     以上作法首字母不能更換，每次都要重新為首字母添加span標籤
+     所以可透過偽元素來完成功能
+    -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque velit modi veniam nisi veritatis tempore laborum
+        nemo ipsa itaque optio. Id odit consequatur mollitia excepturi, minus saepe nostrum vel porro.
+    </p>
+</body>
+
+</html>
