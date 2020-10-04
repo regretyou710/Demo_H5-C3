@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB值</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            /* 
+             顏色單位:
+               在CSS中可以直接使用顏色名來設置各種顏色
+               例如:red、orange、yellow、blue、green ... ...
+               但是在css中直接使用顏色名是非常的不方便
+
+             RGB值:
+               - RGB通過三種顏色的不同濃度來調配出不同的顏色
+               - R red，G green ，B blue
+               - 每一種顏色的範圍在 0 - 255 (0% - 100%) 之間
+               - 語法:RGB(紅色,綠色,藍色)
+
+             RGBA:
+               - 就是在rgb的基礎上增加了一個a表示不透明度
+               - 需要四個值，前三個和rgb一樣，第四個表示不透明度
+                 1表示完全不透明   0表示完全透明  .5半透明
+
+             十六進制的RGB值:
+               - 語法:#紅色綠色藍色
+               - 顏色濃度通過 00-ff
+               - 如果顏色兩位兩位重復可以進行簡寫  
+                 #aabbcc --> #abc
+            */
+
+            background-color: red;
+            background-color: rgb(255, 0, 0);
+            background-color: rgb(0, 255, 0);
+            background-color: rgb(0, 0, 255);
+            background-color: rgb(255, 255, 255);
+            background-color: rgb(106, 153, 85);
+            background-color: rgba(106, 153, 85, .5);
+            background-color: #ff0000;
+            background-color: #ffff00;
+            background-color: #ff0;
+            background-color: #bbffaa;
+            background-color: #9CDCFE;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+</body>
+
+</html>
