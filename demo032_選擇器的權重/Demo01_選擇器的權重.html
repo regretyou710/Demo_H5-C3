@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選擇器的權重</title>
+    <style>
+        /* #box1{
+            background-color: orange;
+        }
+
+        div#box1{
+            background-color: yellow;
+        } */
+
+        .d1 {
+            background-color: purple !important;
+        }
+
+        .red {
+            background-color: red;
+            /* font-size: 20px; */
+        }
+
+
+
+
+        /* 選擇器分組不會所有相加，都是單獨計算 */
+        /* div,
+        p,
+        span {
+            background-color: yellowgreen;
+        } */
+
+
+        /* 
+         樣式的衝突
+           - 當我們通過不同的選擇器，選中相同的元素，並且為相同的樣式設置不同的值時，
+             此時就發生了樣式的衝突。
+
+         發生樣式衝突時，應用哪個樣式由選擇器的權重(優先級)決定
+
+           選擇器的權重
+             內聯樣式        1,0,0,0
+             id選擇器        0,1,0,0
+             類和偽類選擇器   0,0,1,0
+             元素選擇器       0,0,0,1
+             通配選擇器       0,0,0,0
+             繼承的樣式       沒有優先級
+
+         - 比較優先級時，需要將所有的選擇器(交集選擇器)的優先級進行相加計算，最後優先級越高，
+           則越優先顯示(分組選擇器是單獨計算的)，選擇器的累加不會超過其最大的數量級，類選擇器
+           在高也不會超過id選擇器         
+         - 如果優先級計算後相同，此時則優先使用靠下的樣式(最晚執行的那個樣式)
+         - span在繼承div的樣式下，此時再使用通配選擇器對span進行樣式設定，則span會套用通配選擇器
+           的樣式，因為繼承樣式沒有優先級
+
+
+         可以在某一個樣式的後邊添加 !important ，則此時該樣式會獲取到最高的優先級，甚至超過內聯樣式，
+         note:在開發中這個玩意一定要慎用！
+        */
+
+        * {
+            font-size: 50px;
+        }
+
+        div {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="red d1 d2 d3 d4" style="background-color: chocolate;">
+        我是一個div
+        <span>我是div中的span</span>
+    </div>
+</body>
+
+</html>
