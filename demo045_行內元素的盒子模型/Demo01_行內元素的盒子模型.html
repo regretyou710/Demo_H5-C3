@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行內元素的盒子模型</title>
+    <style>
+        .s1 {
+            background-color: yellow;
+
+            /* 
+             行內元素的盒模型
+               - 行內元素不支持設置寬度和高度
+                 (並不代表行內元素沒有內容區，只是無法透過屬性設置寬和高，而是由內容決定)
+               - 行內元素可以設置padding，但是垂直方向padding不會影響頁面的布局
+                 (不會將box1往下擠;如果span上面沒有塊元素，top的部份超出瀏覽器可見範圍)
+               - 行內元素可以設置border，垂直方向的border不會影響頁面的布局
+                 (不會將box1往下擠;如果span上面沒有塊元素，top的部份超出瀏覽器可見範圍)
+               - 行內元素可以設置margin，垂直方向的margin不會影響布局
+                 (不會將box1往下擠)
+            */
+            /* width: 100px;
+             height: 100px; */
+
+            /* padding: 100px; */
+
+            /* border: 100px solid red; */
+
+            margin: 100px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        a {
+            /* 
+             display 用來設置元素顯示的類型
+               可選值:
+                     inline 將元素設置為行內元素
+                     block 將元素設置為塊元素
+                     inline-block 將元素設置為行內塊元素(既可以設置寬度和高度又不會獨占一行)
+                     table 將元素設置為一個表格
+                     none 元素不在頁面中顯示，但是不會占據頁面的位置
+
+             visibility 用來設置元素的顯示狀態
+               可選值:
+                     visible 默認值，元素在頁面中正常顯示
+                     hidden 元素在頁面中隱藏不顯示，但是依然占據頁面的位置
+            */
+            display: block;
+
+            visibility: hidden;
+
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:;">超連接</a>
+    <a href="javascript:;">超連接</a>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+    <div class="box1"></div>
+</body>
+
+</html>

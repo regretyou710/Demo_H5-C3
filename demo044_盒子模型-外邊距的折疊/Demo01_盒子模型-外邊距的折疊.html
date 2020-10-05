@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-外邊距的折疊</title>
+    <style>
+        .box1,
+        .box2 {
+            width: 200px;
+            height: 200px;
+            font-size: 100px;
+
+        }
+
+        /* 
+         垂直外邊距的重疊(折疊)
+           - 相鄰的垂直方向外邊距會發生重疊現象
+           - 兄弟元素
+               - 兄弟元素間的相鄰垂直外邊距會取兩者之間的較大值(兩者都是正值)
+               - 特殊情況:
+                    如果相鄰的外邊距一正一負，則取兩者的和
+                    如果相鄰的外邊距都是負值，則取兩者中絕對值較大的
+
+               - 兄弟元素之間的外邊距的重疊，對於開發是有利的，所以我們不需要進行處理
+
+
+           - 父子元素
+               - 父子元素間相鄰外邊距，子元素的會傳遞給父元素(上外邊距)
+               - 父子外邊距的折疊會影響到頁面的布局，必須要進行處理        
+         */
+
+        .box1 {
+            background-color: #bfa;
+
+            /* 設置一個下外邊距 */
+            margin-bottom: 100px;
+        }
+
+        .box2 {
+            background-color: orange;
+
+            /* 設置一個上外邊距 */
+            margin-top: 100px;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /* padding-top: 100px; */
+            /* border-top: 1px #bfa solid; */
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+
+    <!-- <div class="box1"></div>    
+    <div class="box2"></div> -->
+</body>
+
+</html>
