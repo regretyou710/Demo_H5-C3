@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-內邊距</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            border: 10px orange solid;
+
+            /* 
+             內邊距(padding)
+             - 內容區和邊框之間的距離是內邊距
+             - 一共有四個方向的內邊距:
+               padding-top
+               padding-right
+               padding-bottom
+               padding-left
+
+             - 內邊距的設置會影響到盒子的大小
+             - note:背景顏色會延伸到內邊距上
+
+             一共盒子的可見框的大小，由內容區 內邊距 和 邊框共同決定，所以在計算盒子大小時
+             ，需要將這三個區域加到一起計算
+            */
+
+            /* padding-top: 100px;
+             padding-left: 100px;
+             padding-right: 100px;
+             padding-bottom: 100px; */
+
+            /* 
+             padding 內邊距的簡寫屬性，可以同時指定四個方向的內邊距
+             - 規則和border-width 一樣
+            */
+            padding: 10px 20px 30px 40px;
+            padding: 10px 20px 30px;
+            padding: 10px 20px;
+            padding: 10px;
+        }
+
+        /*
+         創建一個內容區的div區塊將其寬高設置與父元素相同(%單位)，
+         進而表示內邊距與內容區的區隔
+        */
+        .inner {
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="inner"></div>
+    </div>
+</body>
+
+</html>

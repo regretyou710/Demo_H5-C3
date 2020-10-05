@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盒子模型-邊框</title>
+  <style>
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background-color: #bfa;
+
+      /* 
+       邊框
+         邊框的寬度 border-width
+         邊框的顏色 border-color
+         邊框的樣式 border-style
+      */
+
+      /* 
+       border-width: 10px; 
+         默認值，一般都是 3個像素
+         border-width可以用來指定四個方向的邊框的寬度
+         值的情況
+           四個值:上 右 下 左
+           三個值:上 左右 下
+           兩個值:上下 左右
+           一個值:上下左右
+            
+       除了border-width還有一組 border-xxx-width，xxx可以是 top right bottom left，
+       用來單獨指定某一個邊的寬度
+      */
+      /* border-width: 10px; */
+      /* border-top-width: 10px;
+      border-left-width: 30px; */
+
+      color: red;
+
+
+      /* 
+       border-color用來指定邊框的顏色，同樣可以分別指定四個邊的邊框
+       - 規則和border-width一樣
+
+       border-color也可以省略不寫，如果省略了則自動使用color(前景顏色)的顏色值
+       (background-color:後景顏色)
+      */
+      /* border-color: orange red yellow green;
+      border-color: orange; */
+
+
+      /* 
+       border-style 指定邊框的樣式
+        solid 表示實線
+        dotted 點狀虛線
+        dashed 虛線
+        double 雙線
+
+       border-style的默認值是none 表示沒有邊框
+      */
+      /* border-style: solid dotted dashed double;
+      border-style: solid; */
+
+      /* border-width: 10px;
+      border-color: orange;
+      border-style: solid; */
+
+      /* 
+       border簡寫屬性，通過該屬性可以同時設置邊框所有的相關樣式，並且沒有順序要求
+
+       除了border以外還有四個 border-xxx
+         border-top
+         border-right
+         border-bottom
+         border-left
+      */
+      /* border: solid 10px orange; */
+
+
+      /* 只設置三個邊框方式一: */
+      /* border-top: 10px solid red;
+       border-left: 10px solid red;
+       border-bottom: 10px solid red; */
+
+      /* 只設置三個邊框方式二: */
+      border: 10px red solid;
+      border-right: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1"></div>
+</body>
+
+</html>
