@@ -2,13 +2,225 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>京東左側導航欄</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+        /* 設置body */
+        body {
+            /* 設置一個網頁的背景，以使我們方便查看 */
+            background-color: #bfa;
+        }
+
+        /* 設置菜單外部容器 */
+        .left-nav {
+            /* 設置寬度 */
+            width: 190px;
+            /* 設置高度 */
+            height: 450px;
+            /* 設置padding */
+            padding: 10px 0;
+            /* 設置一個背景顏色 */
+            background-color: #fff;
+
+            margin: 50px auto;
+        }
+
+        /* 設置菜單內部的item */
+        /* 
+         note:當item樣式設置左內邊距時會產生水平方向等式的問題
+         因為此時item樣式沒有設置寬度，默認為auto。auto會自動填滿itme寬度與父元素相同         
+         0 + 0 + 18 + auto + 0 + 0 + 0 = 190
+         此時item樣式寬度會從 auto = 190 -18 = 172，(內容會往右擠，出現重疊現象)
+
+         在此練習中，如果item樣式有設定寬度且設定值超出172的話，則會出現item樣式溢出的情形
+         0 + 0 + 18 + 190 + 0 + 0 + (-18) = 190
+        */
+        .left-nav .item {
+            height: 25px;
+            /* 要讓一個文字在父元素中垂直居中，只需將父元素的line-height設置為一個和父元素height一樣的值 */
+            line-height: 25px;
+            /* 設置item的左內邊距，將文字向內移動  */
+            padding-left: 18px;
+            /* 設置字體大小 */
+            font-size: 12px;
+        }
+
+        /* 設置/的距離 */
+        .item .line {
+            padding: 0 2px;
+        }
+
+        /* 為item設置一個鼠標移入的狀態 */
+        .item:hover {
+            background-color: #d9d9d9;
+        }
+
+        /* 設置超鏈接的樣式 */
+        .item a {
+            /* 設置字體大小 */
+            font-size: 14px;
+            /* 設置字體的顏色 */
+            color: #333;
+            /* 去除下劃線 */
+            text-decoration: none;
+        }
+
+        /* 設置超鏈接的hover的樣式 */
+        .item a:hover {
+            color: #c81623;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- 創建一個外部的容器 nav(div) div(div) ul(li)  -->
+    <nav class="left-nav">
+        <div class="item">
+            <a href="#">家用電器</a>
+        </div>
 
+        <div class="item">
+            <a href="#">手機</a>
+            <span class="line">/</span>
+            <a href="#">運營商</a>
+            <span class="line">/</span>
+            <a href="#">數碼</a>
+        </div>
+
+        <div class="item">
+            <a href="#">電腦</a>
+            <span class="line">/</span>
+            <a href="#">辦公</a>
+        </div>
+
+        <div class="item">
+            <a href="#">家居</a>
+            <span class="line">/</span>
+            <a href="#">家具</a>
+            <span class="line">/</span>
+            <a href="#">家裝</a>
+            <span class="line">/</span>
+            <a href="#">廚具</a>
+        </div>
+
+        <div class="item">
+            <a href="#">男裝</a>
+            <span class="line">/</span>
+            <a href="#">女裝</a>
+            <span class="line">/</span>
+            <a href="#">童裝</a>
+            <span class="line">/</span>
+            <a href="#">內衣</a>
+        </div>
+
+        <div class="item">
+            <a href="#">美妝</a>
+            <span class="line">/</span>
+            <a href="#">個護清潔</a>
+            <span class="line">/</span>
+            <a href="#">寵物</a>
+        </div>
+
+        <div class="item">
+            <a href="#">女鞋</a>
+            <span class="line">/</span>
+            <a href="#">箱包</a>
+            <span class="line">/</span>
+            <a href="#">鐘表</a>
+            <span class="line">/</span>
+            <a href="#">珠寶</a>
+        </div>
+
+        <div class="item">
+            <a href="#">男鞋</a>
+            <span class="line">/</span>
+            <a href="#">運動</a>
+            <span class="line">/</span>
+            <a href="#">戶外</a>
+        </div>
+
+        <div class="item">
+            <a href="#">房產</a>
+            <span class="line">/</span>
+            <a href="#">汽車</a>
+            <span class="line">/</span>
+            <a href="#">汽車用品</a>
+        </div>
+
+        <div class="item">
+            <a href="#">母嬰</a>
+            <span class="line">/</span>
+            <a href="#">玩具樂器</a>
+        </div>
+
+        <div class="item">
+            <a href="#">食品</a>
+            <span class="line">/</span>
+            <a href="#">酒類</a>
+            <span class="line">/</span>
+            <a href="#">生鮮</a>
+            <span class="line">/</span>
+            <a href="#">特產</a>
+        </div>
+
+        <div class="item">
+            <a href="#">藝術</a>
+            <span class="line">/</span>
+            <a href="#">禮品鮮花</a>
+            <span class="line">/</span>
+            <a href="#">農資綠植</a>
+        </div>
+
+        <div class="item">
+            <a href="#">醫藥保健</a>
+            <span class="line">/</span>
+            <a href="#">計生情趣</a>
+        </div>
+
+        <div class="item">
+            <a href="#">圖書</a>
+            <span class="line">/</span>
+            <a href="#">文娛</a>
+            <span class="line">/</span>
+            <a href="#">電子書</a>
+        </div>
+
+        <div class="item">
+            <a href="#">機票</a>
+            <span class="line">/</span>
+            <a href="#">酒店</a>
+            <span class="line">/</span>
+            <a href="#">旅游</a>
+            <span class="line">/</span>
+            <a href="#">生活</a>
+        </div>
+
+        <div class="item">
+            <a href="#">理財</a>
+            <span class="line">/</span>
+            <a href="#">眾籌</a>
+            <span class="line">/</span>
+            <a href="#">白條</a>
+            <span class="line">/</span>
+            <a href="#">保險</a>
+        </div>
+
+        <div class="item">
+            <a href="#">安裝</a>
+            <span class="line">/</span>
+            <a href="#">維修</a>
+            <span class="line">/</span>
+            <a href="#">清洗</a>
+            <span class="line">/</span>
+            <a href="#">二手</a>
+        </div>
+
+        <div class="item">
+            <a href="#">工業品</a>
+        </div>
+    </nav>
 </body>
 
 </html>
