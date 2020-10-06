@@ -5,10 +5,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>網易新聞列表</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        /* body{
+            background-color: #bfa;
+        } */
+
+        a {
+            /* 去除下劃線 */
+            text-decoration: none;
+        }
+
+        /* 設置容器的樣式 */
+        .news-wrapper {
+            /* 設置寬度 */
+            width: 300px;
+            /* 設置高度 */
+            height: 357px;
+            /*設置居中  */
+            margin: 50px auto;
+            /* 設置背景顏色，顯示輪廓 */
+            background-color: #fff;
+
+            /* 設置上邊框 */
+            border-top: 1px solid #ddd;
+        }
+
+        /* 設置news-title */
+        .news-title {
+            /* 為了邊框和文字寬度一致，需要將h2轉換為行內塊元素 */
+            display: inline-block;
+            /* 設置高度 */
+            height: 30px;
+            /* 設置上邊框  */
+            border-top: 1px red solid;
+            /* 通過margin-top將h2上移，蓋住上邊框 */
+            margin-top: -1px;
+            /* 
+             因為超連結是行內元素，margin不影響垂直布局，
+             想達到.news-title a往下移但又不能對其設置margin，
+             可對.news-title設置padding
+            */
+            padding-top: 10px;
+        }
+
+        /* 設置title中超連結的樣式 */
+        .news-title a {
+            /* 設置顏色 */
+            color: #40406B;
+            /* 設置文字的加粗效果 */
+            font-weight: bold;
+        }
+
+        /* 設置圖片容器的高度  */
+        .news-img {
+            height: 150px;
+        }
+
+        /* 設置圖片的文字效果 */
+        .news-img .img-title {
+            /* 向上移動文字 */
+            margin-top: -30px;
+            /* 設置字體顏色 */
+            color: #fff;
+            /* 設置加粗 */
+            font-weight: bold;
+            /* 設置padding */
+            padding-left: 30px;
+
+        }
+
+        /* 設置新聞列表 */
+        .news-list {
+            /* 設置上外邊距 */
+            margin-top: 20px;
+            /* 設置左側的padding */
+            /* padding-left: 14px; */
+
+            /* 設置項目符號 */
+            /* list-style: square; */
+        }
+
+        /* 設置li */
+        .news-list li {
+            /* 設置下外邊距  */
+            margin-bottom: 17px;
+        }
+
+        /* 通過before偽元素，來為每一個li添加項目符號 */
+        .news-list li::before {
+            content: '■';
+            color: rgb(218, 218, 218);
+            font-size: 12px;
+            margin-right: 4px;
+        }
+
+        /* 設置li中文字 */
+        .news-list li a {
+            /* 設置字體大小 */
+            font-size: 14px;
+            /* 設置字體顏色 */
+            color: #666;
+        }
+
+
+        /* 設置超連結的鼠標移入的樣式 */
+        .news-list li a:hover {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- 創建新聞列表的外側的容器 -->
+    <div class="news-wrapper">
+        <!-- 創建一個標題標籤 -->
+        <h2 class="news-title">
+            <a href="#">體育</a>
+        </h2>
 
+        <!-- 創建一個圖片的容器 -->
+        <div class="news-img">
+            <a href="#">
+                <img src="./img/1.jpeg" alt="費德勒">
+                <!-- 創建圖片標題 -->
+                <h3 class="img-title">
+                    費德勒首負迪米 扶額頭不滿發揮
+                </h3>
+            </a>
+        </div>
+
+        <!-- 新聞列表 -->
+        <ul class="news-list">
+            <li>
+                <a href="#">喬治:我愛LA 喜歡和LBJ一起打球</a>
+            </li>
+            <li>
+                <a href="#">格林:3年前降薪就在等KD 特制T恤嘲諷LBJ</a>
+            </li>
+            <li>
+                <a href="#">塔克4000雙鞋讓保羅羨慕嫉妒 喬丹被震驚</a>
+            </li>
+            <li>
+                <a href="#">CBA下季新賽制:常規賽4組循環 增至46輪</a>
+            </li>
+        </ul>
+    </div>
 </body>
 
 </html>
