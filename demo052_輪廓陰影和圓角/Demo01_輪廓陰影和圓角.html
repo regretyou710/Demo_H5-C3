@@ -5,10 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>輪廓陰影和圓角</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+
+            /* 
+             box-shadow 用來設置元素的陰影效果，陰影不會影響頁面布局 
+                第一個值 水平偏移量 設置陰影的水平位置 正值向右移動 負值向左移動
+                第二個值 垂直偏移量 設置陰影的水平位置 正值向下移動 負值向上移動
+                第三個值 陰影的模糊半徑
+                第四個值 陰影的顏色
+            */
+
+            box-shadow: 0px 0px 50px rgba(0, 0, 0, .3);
+
+            /* 
+             outline 用來設置元素的輪廓線，用法和border一模一樣，
+                     輪廓和邊框不同的點，就是輪廓不會影響到可見框的大小    
+            */
+        }
+
+        /* .box1:hover {
+            outline: 10px red solid;
+        } */
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /* border-radius: 用來設置圓角 圓角設置的圓的半徑大小*/
+
+            /* border-top-left-radius:  */
+            /* border-top-right-radius */
+            /* border-bottom-left-radius:  */
+            /* border-bottom-right-radius:  */
+            /* border-top-left-radius:50px 100px; */
+
+            /* 
+             border-radius 可以分別指定四個角的圓角
+                四個值 左上 右上 右下 左下
+                三個值 左上 右上/左下 右下 
+                兩個值 左上/右下 右上/左下 
+                兩個值 水平/垂直 
+            */
+            /* border-radius: 20px / 40px; */
+
+            /* 將元素設置為一個圓形 */
+            border-radius: 50%;
+        }
+    </style>
 </head>
 
 <body>
-
+    <!-- <div class="box1"></div> -->
+    <div class="box2"></div>
 </body>
 
 </html>
