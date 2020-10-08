@@ -5,10 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>盒子的大小</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            padding: 10px;
+            border: 10px red solid;
+            /* 
+             默認情況下，盒子可見框的大小由內容區、內邊距和邊框共同決定
+
+             box-sizing:用來設置盒子尺寸的計算方式(設置width和height的作用)
+               可選值:
+               - content-box 默認值，寬度和高度用來設置內容區的大小
+               - border-box 寬度和高度用來設置整個盒子可見框的大小，width和height
+                            指的是內容區和內邊距和邊框的總大小                 
+            */
+
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="box1"></div>
 </body>
 
 </html>
