@@ -8,7 +8,6 @@
     <style>
         .box1 {
             border: 10px red solid;
-
             /* overflow: hidden; */
         }
 
@@ -19,12 +18,24 @@
             float: left;
         }
 
+        /* 清除box2的浮動對box3的影響 */
         .box3 {
             clear: both;
         }
 
         .box1::after {
             content: '';
+            /* 
+             默認情況下::after是行內元素(不獨占一行)
+             因為不獨占一行所以使用clear看不出影響
+
+             1. 參考 demo045_行內元素的盒子模型\Demo01_行內元素的盒子模型.html
+                - 行內元素可以設置margin，"垂直方向的margin不會影響布局"
+             2. 參考 demo059_clear\Demo01_clear.html
+                - 原理:設置清除浮動以後，瀏覽器會自動為元素添加一個"上外邊距"，以使其位置不受其他元素的影響
+             
+             因此轉換為塊元素
+            */
             display: block;
             clear: both;
         }
@@ -32,8 +43,16 @@
 </head>
 
 <body>
-    <div class="box2"></div>
-    <!-- <div class="box3"></div> -->
+
+    <!-- .box1>.box2 -->
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- 當box2設成浮動時，box3的文字會環繞box2(浮動元素不會蓋住文字) -->
+        <!-- <div class="box3"> -->
+            <!-- aa -->
+        <!-- </div> -->
+    </div>
+
 </body>
 
 </html>

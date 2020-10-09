@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clearfix</title>
     <style>
+        /* 
+         解決父子元素上外邊距折疊問題
+         - 讓父子元素之間不相鄰
+
+         參考 demo044_盒子模型-外邊距的折疊\Demo01_盒子模型-外邊距的折疊.html
+        */
+
         .box1 {
             width: 200px;
             height: 200px;
@@ -31,6 +38,7 @@
         .clearfix::before,
         .clearfix::after {
             content: '';
+            /* table值既可以解決上外邊距重疊問題也可以解決高度塌陷問題 */
             display: table;
             clear: both;
         }
