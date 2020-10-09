@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w3school的導航條</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        /* 設置nav的大小 */
+        .nav {
+
+            /* 設置寬度和高度 */
+            width: 1210px;
+            height: 48px;
+            /* 設置背景顏色 */
+            background-color: #E8E7E3;
+
+            margin: 100px auto;
+
+        }
+
+        /* 設置nav中li */
+        .nav li {
+            /* 設置li向左浮動，以使菜單橫向排列 */
+            float: left;
+            /* 設置li的高度 */
+            /* height: 48px; */
+            /* 將文字在父元素中垂直居中 */
+            line-height: 48px;
+        }
+
+        /* 設置a的樣式 */
+        .nav a {
+            /* 將a轉換為塊元素 */
+            display: block;
+            /* 去除下劃線 */
+            text-decoration: none;
+            /* 設置字體顏色 */
+            color: #777777;
+            /* 修改字體大小 */
+            font-size: 18px;
+
+            padding: 0 39px;
+        }
+
+        .nav li:last-child a {
+            padding: 0 42px 0 41px;
+        }
+
+        /* 設置鼠標移入的效果 */
+        .nav a:hover {
+            background-color: #3F3F3F;
+            color: #E8E7E3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 創建導航條的結構 -->
+    <ul class="nav">
+        <li>
+            <a href="#">HTML/CSS</a>
+        </li>
+        <li>
+            <a href="#">Browser Side</a>
+        </li>
+        <li>
+            <a href="#">Server Side</a>
+        </li>
+        <li>
+            <a href="#">Programming</a>
+        </li>
+        <li>
+            <a href="#">XML</a>
+        </li>
+        <li>
+            <a href="#">Web Building</a>
+        </li>
+        <li>
+            <a href="#">Reference</a>
+        </li>
+    </ul>
+</body>
+
+</html>
