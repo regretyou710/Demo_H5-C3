@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相對定位</title>
+    <style>
+        body {
+            font-size: 60px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /*
+             定位(position)
+               - 定位是一種更加高級的布局手段
+               - 通過定位可以將元素擺放到頁面的任意位置
+               - 使用position屬性來設置定位
+                 可選值:
+                        static 默認值，元素是靜止的沒有開啟定位
+                        relative 開啟元素的相對定位
+                        absolute 開啟元素的絕對定位
+                        fixed 開啟元素的固定定位
+                        sticky 開啟元素的粘滯定位
+
+               - 相對定位:
+                   - 當元素的position屬性值設置為relative時則開啟了元素的相對定位
+                   - note:相對定位表示元素移動座標後參照於移動前top:0px left:0px 座標的位置(26分10秒)
+                   - 相對定位的特點:
+                       1.元素開啟相對定位以後，如果不設置偏移量元素不會發生任何的變化
+                       2.相對定位是參照于元素在文檔流中的位置進行定位的
+                       3.相對定位會提升元素的層級
+                       4.相對定位不會使元素脫離文檔流(如果脫離文檔流，下面的元素會往上擠，但並沒有)
+                       5.相對定位不會改變元素的性質塊還是塊，行內還是行內
+
+               - 偏移量(offset)
+                   - 當元素開啟了定位以後，可以通過偏移量來設置元素的位置
+                       top
+                          - 定位元素和定位位置上邊的距離
+                       bottom
+                          - 定位元素和定位位置下邊的距離
+
+                          - 定位元素垂直方向的位置由top和bottom兩個屬性來控制
+                                通常情況下我們只會使用其中一
+                          - top值越大，定位元素越向下移動
+                          - bottom值越大，定位元素越向上移動
+                       left
+                          - 定位元素和定位位置的左側距離
+                       right
+                          - 定位元素和定位位置的右側距離
+
+                          - 定位元素水平方向的位置由left和right兩個屬性控制
+                                通常情況下只會使用一個
+                          - left越大元素越靠右
+                          - right越大元素越靠左
+            */
+
+            position: relative;
+
+            left: 100px;
+            top: -200px;
+
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+
+</html>

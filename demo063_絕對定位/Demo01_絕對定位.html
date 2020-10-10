@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>絕對定位</title>
+    <style>
+        body {
+            font-size: 60px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /* 
+             絕對定位
+               - 當元素的position屬性值設置為absolute時，則開啟了元素的絕對定位
+               - 絕對定位的特點:
+                   1.開啟絕對定位後，如果不設置偏移量元素的位置不會發生變化
+                   2.開啟絕對定位後，元素會從文檔流中脫離
+                   3.絕對定位會改變元素的性質，行內變成塊，塊的寬高被內容撐開
+                   
+                   脫離文檔流的特點:
+                     塊元素:
+                       1、塊元素不再獨占頁面的一行
+                       2、脫離文檔流以後，塊元素的寬度和高度默認都被內容撐開
+                     行內元素:
+                       行內元素脫離文檔流以後會變成塊元素，特點和塊元素一樣
+                     note:脫離文檔流以後，不需要再區分塊和行內了
+
+                   4.絕對定位會使元素提升一個層級
+                   5.絕對定位元素是相對於其包含塊進行定位的
+
+                   包含塊(containing block)
+                     - 正常情況下:包含塊就是離當前元素最近的祖先塊元素
+                       <div> <div></div> </div>
+                       => 內div的包含塊是外div
+
+                       <div><span><em>hello</em></span></div>
+                       => em最近的包含塊是div，因為span是行內元素
+
+                     - 絕對定位的包含塊:包含塊就是離它最近的開啟了定位的祖先元素，如果所有的
+                       祖先元素都沒有開啟定位則根元素就是它的包含塊
+
+                     - html(根元素、初始包含塊)
+            */
+
+            position: absolute;
+            /* left: 0;
+            top: 0; */
+            bottom: 0;
+            right: 0;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+
+        }
+
+        .box4 {
+            width: 400px;
+            height: 400px;
+            background-color: tomato;
+            position: relative;
+        }
+
+        .box5 {
+            width: 300px;
+            height: 300px;
+            background-color: aliceblue;
+            /* position: relative; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">1</div>
+
+    <div class="box4">
+        4
+        <div class="box5">
+            5
+            <div class="box2">2</div>
+        </div>
+    </div>
+    <div class="box3">3</div>
+</body>
+
+</html>
