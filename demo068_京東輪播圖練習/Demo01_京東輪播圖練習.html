@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京東輪播圖練習</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        /* 設置圖片的容器 */
+        .img-list {
+            width: 590px;
+            height: 470px;
+            margin: 100px auto;
+
+            /* 
+             為ul開啟相對定位，目的是使ul中的pointer可以相對於ul定位而不是相對於初始包含塊(html)去定位
+             相對定位不會脫離文檔流，不影響布局
+             絕對定位會脫離文檔流，影響布局
+             所以在ul身上開啟絕對定位
+            */
+            position: relative;
+
+        }
+
+        /* 設置li */
+        .img-list li {
+            /* 
+             為了讓所有圖片都疊在一起，使用絕對定位讓圖片逐一脫離文檔流 
+             在沒有設置層級的條件下，越前面的圖片會疊在越下面
+            */
+            position: absolute;
+        }
+
+        /* 通過修改元素的層級來顯示指定的圖片 */
+        .img-list li:nth-child(4) {
+            z-index: 1;
+        }
+
+
+
+        /* 設置導航點的樣式 */
+        .pointer {
+            position: absolute;
+            z-index: 9999;
+            bottom: 20px;
+            left: 40px;
+        }
+
+        .pointer a {
+            /* 設置元素向左浮動 */
+            float: left;
+            /* 
+             a屬於行內元素不支持設定寬高，為了讓導航點顯示出來所以設置display:block
+             但為了讓導航點橫向排列所以設置float:left，在設置浮動後會脫離文檔流，脫離
+             文檔流以後，不需要再區分塊和行內了，塊元素的寬度和高度默認都被內容撐開
+             (仍可以設置寬高)
+            */
+            /* display: block; */
+            width: 10px;
+            height: 10px;
+            margin: 0px 2px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .3);
+            /* 將背景顏色值設置到內容區，邊框和內邊距不在有背景顏色 */
+            background-clip: content-box;
+            border: 2px solid transparent;
+        }
+
+        .pointer a.active,
+        .pointer a:hover {
+            background-color: #fff;
+            border: 2px solid rgba(255, 255, 255, .3);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="./img/1.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/2.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/3.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/4.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/5.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/6.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/7.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/8.jpg"></a></li>
+
+        <div class="pointer">
+            <a class="active" href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+</body>
+
+</html>
