@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字體的簡寫屬性</title>
+    <style>
+        div {
+            border: 1px red solid;
+
+
+            /* 
+             font 可以設置字體相關的所有屬性
+             語法:
+                 font: 字體大小/行高 字體族
+                 行高 可以省略不寫 如果不寫使用默認值        
+            */
+
+            /* font-size: 50px;
+            font-family: 'Times New Roman', Times, serif; */
+            font-weight: bold;
+            /* font: 50px/2  微軟雅黑, 'Times New Roman', Times, serif; */
+            /* font: normal normal 50px/2  微軟雅黑, 'Times New Roman', Times, serif; */
+            font: bold italic 50px/2 微軟雅黑, 'Times New Roman', Times, serif;
+            /* font:50px 'Times New Roman', Times, serif;
+            line-height: 2; */
+
+            /* font-size: 50px; */
+
+            /* 
+             font-weight 字重 字體的加粗 
+                可選值:
+                    normal 默認值 不加粗
+                    bold 加粗
+                    100-900 九個級別(沒什麼用)
+
+                font-style 字體的風格
+                    normal 正常的
+                    italic 斜體
+            */
+            /* font-weight: bold; */
+            /* font-weight: 500;
+            font-style: italic; */
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>今天天氣真不錯 Hello hello</div>
+</body>
+
+</html>
