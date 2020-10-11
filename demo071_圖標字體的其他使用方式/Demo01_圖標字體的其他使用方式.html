@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖標字體的其他使用方式</title>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        li::before {
+            /* 
+             通過偽元素來設置圖標字體
+               1.找到要設置圖標的元素通過before或after選中
+               2.在content中設置字體的編碼
+               3.設置字體的樣式
+                   fab
+                   font-family: 'Font Awesome 5 Brands';
+
+                   fas
+                   font-family: 'Font Awesome 5 Free';
+                   font-weight: 900;
+            */
+            content: '\f1b0';
+            /* font-family: 'Font Awesome 5 Brands'; */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: blue;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <i class="fas fa-cat"></i> -->
+
+    <ul>
+        <li>鋤禾日當午</li>
+        <li>汗滴禾下土</li>
+        <li>誰知盤中餐</li>
+        <li>粒粒皆辛苦</li>
+    </ul>
+
+    <!-- 
+     通過實體來使用圖標字體:
+     &#x圖標的編碼;
+    -->
+    <span class="fas">&#xf0f3;</span>
+</body>
+
+</html>

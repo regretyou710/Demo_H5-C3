@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字體族</title>
+    <style>
+        /* 
+         font-face可以將服務器中的字體直接提供給用戶去使用 
+         問題:
+             1.加載速度
+             2.版權
+             3.字體格式        
+        */
+        @font-face {
+            /* 指定字體的名字 */
+            font-family: 'myfont';
+            /* 服務器中字體的路徑 */
+            src: url('./font/ZCOOLKuaiLe-Regular.ttf') format("truetype");
+        }
+
+        p {
+            /* 
+             字體相關的樣式 
+               - color 用來設置字體顏色
+               - font-size 字體的大小
+                 和font-size相關的單位:
+                   1. em 相當於當前元素的一個font-size
+                   2. rem 相對於根元素的一個font-size
+               - font-family 字體族(字體的格式)
+                 可選值:
+                        serif  襯線字體
+                        sans-serif 非襯線字體
+                        monospace 等寬字體
+                        - 這些可選值表示指定字體的類別，瀏覽器會自動使用該類別下的字體
+
+             font-family可以同時指定多個字體，多個字體間使用,隔開。字體生效時優先使用第一個，
+             第一個無法使用則使用第二個以此類推
+
+             Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif
+            */
+            color: blue;
+            font-size: 40px;
+
+            /* font-family: 'Courier New', Courier, monospace; */
+            font-family: myfont;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        今天天氣真不錯，Hello Hello How are you！
+    </p>
+</body>
+
+</html>
