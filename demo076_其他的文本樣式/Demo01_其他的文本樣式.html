@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他的文本樣式</title>
+    <style>
+        .box1 {
+            font-size: 50px;
+            font-family: 微軟雅黑;
+
+
+            /* 
+             text-decoration 設置文本修飾
+               可選值:
+                     none 什麼都沒有
+                     underline 下劃線
+                     line-through 刪除線
+                     overline 上劃線
+            */
+
+            /* text-decoration: overline; */
+
+            /* text-decoration新的語法IE不支持 */
+            /* text-decoration: underline red dotted; */
+        }
+
+        /* 
+         將文本內容設置省略號
+         需要條件: 
+                 1.width: px;
+                 2.white-space: nowrap; 
+                 3.overflow: hidden; 
+                 4.text-overflow: ellipsis;
+        */
+        .box2 {
+            width: 200px;
+            /* 
+             white-space 設置網頁如何處理空白
+               可選值:
+                     normal 正常
+                     nowrap 不換行
+                     pre 保留空白 (瀏覽器會將多個空格和換行解析成一個空格;參考 demo007_實體\Demo01_實體.html)
+            */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, minus fugit in perspiciatis reprehenderit
+        consequuntur aspernatur repellat cumque quidem asperiores quaerat placeat, tenetur vel veritatis deserunt
+        numquam. Dolores, cupiditate enim.
+    </div>
+
+    <div class="box1">
+        今天天氣真不錯
+    </div>
+</body>
+
+</html>
