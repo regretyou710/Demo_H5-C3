@@ -9,17 +9,18 @@
         div {
             border: 1px red solid;
 
-
             /* 
              font 可以設置字體相關的所有屬性
              語法:
                  font: 字體大小/行高 字體族
-                 行高 可以省略不寫 如果不寫使用默認值        
+                 font-weight、font-style、line-height、可以省略不寫 如果不寫使用默認值   
+                 (字體大小和字體族必須填寫)     
             */
 
             /* font-size: 50px;
             font-family: 'Times New Roman', Times, serif; */
             font-weight: bold;
+
             /* font: 50px/2  微軟雅黑, 'Times New Roman', Times, serif; */
             /* font: normal normal 50px/2  微軟雅黑, 'Times New Roman', Times, serif; */
             font: bold italic 50px/2 微軟雅黑, 'Times New Roman', Times, serif;
@@ -31,20 +32,17 @@
             /* 
              font-weight 字重 字體的加粗 
                 可選值:
-                    normal 默認值 不加粗
+                    normal 不加粗 (默認值)
                     bold 加粗
                     100-900 九個級別(沒什麼用)
 
                 font-style 字體的風格
-                    normal 正常的
+                    normal 正常的 (默認值)
                     italic 斜體
             */
             /* font-weight: bold; */
             /* font-weight: 500;
             font-style: italic; */
-
-
-
         }
     </style>
 </head>
