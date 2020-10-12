@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京東頂部導航條-結構</title>
+    <!-- 引入重置樣式表 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引用圖標字體 -->
+    <link rel="stylesheet" href="./fa/css/all.css">
+</head>
+
+<body>
+    <!-- 創建外圍的容器 -->
+    <div class="top-bar-wrapper">
+        <!-- 創建內部容器 -->
+        <div class="top-bar">
+            <!-- 左側的菜單 -->
+            <div class="location">
+                <div class="current-city">
+                    <a href="javascript:;">北京</a>
+                </div>
+            </div>
+
+            <!-- 右側的菜單 -->
+            <ul class="shortcut">
+                <li>
+                    <a href="javascript:;">你好，請登錄</a>
+                    <a href="javascript:;">免費注冊</a>
+                </li>
+
+                <!-- 分割線 -->
+                <li class="line"></li>
+                <li><a href="javascript:;">我的訂單</a></li>
+
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的京東</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li><a href="javascript:;">京東會員</a></li>
+
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">企業採購</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <!-- 沒有超連結，使用span -->
+                    <span>客戶服務</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <span>網站導航</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <span>手機京東</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

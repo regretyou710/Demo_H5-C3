@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京東頂部導航條-下拉框</title>
+    <!-- 引入重置樣式表 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引用圖標字體 -->
+    <link rel="stylesheet" href="./fa/css/all.css">
+    <style>
+        /* 對location及shortcut浮動後top-bar高度塌陷問題的處理 */
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        body {
+            /* 設置字體 */
+            font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+        }
+
+        /* 設置外部容器的樣式 */
+        .top-bar-wrapper {
+            /* 設置寬度 */
+            width: 100%;
+            /* 設置背景顏色 */
+            background-color: #E3E4E5;
+            /* 為了不讓current-city在設置border時將top-bar-wrapper稱高，所以將高度固定 */
+            height: 30px;
+            /* 設置行高，沒有設置高度 使文字垂直居中 */
+            line-height: 30px;
+            /* 設置下邊框 */
+            border-bottom: 1px #ddd solid;
+        }
+
+        /* 設置內部容器的樣式 */
+        .top-bar {
+            /* 固定寬度 */
+            width: 1190px;
+            /* 設置水平居中 */
+            margin: 0 auto;
+            /* 為了將city-list在絕對定位上向上移動，對其包含塊開啟定位 */
+            position: relative;
+        }
+
+        /* 設置字體樣式 */
+        .top-bar a,
+        .top-bar span,
+        .top-bar i {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .top-bar a:hover,
+        .top-bar a.highlight {
+            color: #f10215;
+        }
+
+        /* 設置location */
+        .location {
+            float: left;
+        }
+
+        /* 設置location下的小圖標 */
+        .location .fas {
+            color: #f10215;
+        }
+
+        /* 設置城市列表的效果 */
+        .location .city-list {
+            display: none;
+            width: 320px;
+            height: 436px;
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            /* 
+             - 為了city-list顯示時不佔據location內容，所以使用絕對定位讓其脫離文檔流
+             - 開啟絕對定位後，如果不設置偏移量元素的位置不會發生變化
+            */
+            /* 設置絕對定位，使其不佔據頁面的位置 */
+            position: absolute;
+
+            /* 
+             因為current-city:hover設置padding-bottom: 1px;
+             ，所以city-list也往下擠1px。在city-list已經開啟絕對定位下將
+             其與top距離設置30px+1px高度
+            */
+            top: 31px;
+
+            /* 
+             避免其他樣式渲染蓋過city-list所以設置較高的層級
+            */
+            z-index: 999;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .2)
+        }
+
+        /* 
+         - 當鼠標移入到location時，讓city-list顯示
+
+         - 在滑鼠離開current-city時city-list也會隨之消失，所以不該hover綁定在current-city身上
+           .current-city:hover+.city-list {
+              display: block;
+           }
+           為了讓city-list不消失，應該綁定在父元素location身上。但location也隨著city-list顯示稱大
+        */
+        .location:hover .city-list {
+            display: block;
+        }
+
+        .current-city {
+            padding: 0 10px;
+            /*
+             因為current-city在移入時有設置邊框，導致文字會移動，為了讓滑鼠移動到current-city文字
+             不會移動所以設置和移入時相同的邊框大小並透明
+            */
+            border: 1px solid transparent;
+            border-bottom: none;
+
+            /* 
+             為了讓current-city的下邊框可以蓋住city-list，又因為目前city-list開啟絕對定位脫離文檔流
+             current-city沒開啟定位，current-city無法蓋住city-list，所以將current-city開啟一個不會
+             影響位置的相對定位(不會脫離文檔流)
+            */
+            position: relative;
+
+            /* 
+             在current-city和city-list都沒設置層級，並且city-list在current-city之後
+             ，所以current-city設置層級後才能蓋住city-list
+            */
+            z-index: 9999;
+        }
+
+        /* 設置current-city的移入的效果 */
+        /* 
+         不應該在current-city上綁定移入效果，會造成滑鼠離開current-city後沒有樣式效果
+         所以應該綁定在父元素身上
+        */
+        .location:hover .current-city {
+            /* .current-city:hover { */
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            border-bottom: none;
+            padding-bottom: 1px;
+        }
+
+        /* 設置shortcut */
+        .shortcut {
+            float: right;
+        }
+
+        /* 設置分割線 */
+        .shortcut .line {
+            width: 1px;
+            height: 10px;
+            background-color: rgb(204, 202, 202);
+            margin: 12px 12px 0;
+            /* 三個值:上 左右 下 */
+        }
+
+        /* 設置li */
+        /* 設置浮動後脫離文檔流，避免ul高度塌陷所以套用clearfix */
+        .shortcut li {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 創建外圍的容器 -->
+    <div class="top-bar-wrapper">
+        <!-- 創建內部容器 -->
+        <div class="top-bar clearfix">
+            <!-- 左側的菜單 -->
+            <div class="location">
+                <div class="current-city">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="javascript:;">北京</a>
+                </div>
+
+                <!-- 放置城市列表的div -->
+                <div class="city-list">
+
+                </div>
+            </div>
+
+            <!-- 右側的菜單 -->
+            <ul class="shortcut clearfix">
+                <li>
+                    <a href="javascript:;">你好，請登錄</a>
+                    <a class="highlight" href="javascript:;">免費注冊</a>
+                </li>
+
+                <!-- 分割線 -->
+                <li class="line"></li>
+                <li><a href="javascript:;">我的訂單</a></li>
+
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的京東</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li><a href="javascript:;">京東會員</a></li>
+
+                <li class="line"></li>
+                <li>
+                    <a class="highlight" href="javascript:;">企業採購</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <!-- 沒有超連結，使用span -->
+                    <span>客戶服務</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <span>網站導航</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <span>手機京東</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

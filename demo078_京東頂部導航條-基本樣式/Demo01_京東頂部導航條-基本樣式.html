@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京東頂部導航條-基本樣式</title>
+    <!-- 引入重置樣式表 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引用圖標字體 -->
+    <link rel="stylesheet" href="./fa/css/all.css">
+    <style>
+        /* 對location及shortcut浮動後top-bar高度塌陷問題的處理 */
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        body {
+            /* 設置字體 */
+            font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+        }
+
+        /* 設置外部容器的樣式 */
+        .top-bar-wrapper {
+            /* 設置寬度 */
+            width: 100%;
+            /* 設置背景顏色 */
+            background-color: #E3E4E5;           
+            /* 設置行高，沒有設置高度 使文字垂直居中 */
+            line-height: 30px;
+            /* 設置下邊框 */
+            border-bottom: 1px #ddd solid
+        }
+
+        /* 設置內部容器的樣式 */
+        .top-bar {
+            /* 固定寬度 */
+            width: 1190px;
+            /* 設置水平居中 */
+            margin: 0 auto;
+        }
+
+        /* 設置字體樣式 */
+        .top-bar a,
+        .top-bar span,
+        .top-bar i {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .top-bar a:hover,
+        .top-bar a.highlight {
+            color: #f10215;
+        }
+
+        /* 設置location */
+        .location {
+            float: left;
+        }
+
+        /* 設置location下的小圖標 */
+        .location .fas {
+            color: #f10215;
+        }
+
+        /* 設置shortcut */
+        .shortcut {
+            float: right;
+        }
+
+        /* 設置分割線 */
+        .shortcut .line {
+            width: 1px;
+            height: 10px;
+            background-color: rgb(204, 202, 202);
+            margin: 12px 12px 0;
+            /* 三個值:上 左右 下 */
+        }
+
+        /* 設置li */
+        /* 設置浮動後脫離文檔流，避免ul高度塌陷所以套用clearfix */
+        .shortcut li {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 創建外圍的容器 -->
+    <div class="top-bar-wrapper">
+        <!-- 創建內部容器 -->
+        <div class="top-bar clearfix">
+            <!-- 左側的菜單 -->
+            <div class="location">
+                <div class="current-city">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="javascript:;">北京</a>
+                </div>
+            </div>
+
+            <!-- 右側的菜單 -->
+            <ul class="shortcut clearfix">
+                <li>
+                    <a href="javascript:;">你好，請登錄</a>
+                    <a class="highlight" href="javascript:;">免費注冊</a>
+                </li>
+
+                <!-- 分割線 -->
+                <li class="line"></li>
+                <li><a href="javascript:;">我的訂單</a></li>
+
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的京東</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li><a href="javascript:;">京東會員</a></li>
+
+                <li class="line"></li>
+                <li>
+                    <a class="highlight" href="javascript:;">企業採購</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <!-- 沒有超連結，使用span -->
+                    <span>客戶服務</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <span>網站導航</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <span>手機京東</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
